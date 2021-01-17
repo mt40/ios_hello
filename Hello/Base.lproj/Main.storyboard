@@ -39,9 +39,6 @@
                                 <rect key="frame" x="184" y="661" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MB8-mi-nuo"/>
-                                </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Av9-vm-LSv">
                                 <rect key="frame" x="183" y="727" width="49" height="31"/>
@@ -50,12 +47,43 @@
                                     <action selector="switchToggled:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IZv-Uc-kQ9"/>
                                 </connections>
                             </switch>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vMW-4f-BRU">
+                                <rect key="frame" x="148" y="797" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="eMI-lT-9lZ"/>
+                                </connections>
+                            </slider>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jti-kh-YV7">
+                                <rect key="frame" x="20" y="657" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="keyboardReturnKeyTapped:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="HM4-em-mEH"/>
+                                    <action selector="textChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="3eH-Tz-t2M"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="oK8-0h-JbP" appends="YES" id="ycY-F5-bL9"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="button" destination="f1s-Ru-sRa" id="yGl-b9-9we"/>
+                        <outlet property="slider" destination="vMW-4f-BRU" id="XbJ-VJ-5re"/>
+                        <outlet property="toggle" destination="Av9-vm-LSv" id="209-eG-P0u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="oK8-0h-JbP">
+                    <connections>
+                        <action selector="respondToTapGesture:" destination="BYZ-38-t0r" id="g9p-E9-typ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="531.8840579710145" y="103.79464285714285"/>
         </scene>
